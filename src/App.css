@@ -4,7 +4,27 @@
   border: 0;
 }
 
+body {
+  color: aliceblue;
+}
+
 .App {
   height: 100vh;
-  color: black;
+}
+
+h1 {
+  text-align: center;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid green;
+}
+
+button {
+  padding: 10px;
+  outline: none;
+  border: 2px solid black;
+  color: aliceblue;
 }

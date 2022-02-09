@@ -16,7 +16,9 @@ function App() {
   return (
     <div className="App" style={{backgroundColor: `${randomColor}`}}>
       <h1>Hello React Quote Viewer Project</h1>
-      <QuoteBox setRandomColor={setRandomColor} colorGenerator={colorGenerator}/>
+      <div className='quote-container'>
+        <QuoteBox setRandomColor={setRandomColor} colorGenerator={colorGenerator} randomColor={randomColor}/>
+      </div>
     </div>
   );
 }

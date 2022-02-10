@@ -1,4 +1,5 @@
 import React from 'react';
+import {randomQuotes} from '../utils/quotes'
 
 interface quoteProps {
   setRandomColor: React.Dispatch<React.SetStateAction<string>>
@@ -12,10 +13,13 @@ const QuoteBox: React.FC<quoteProps> = ({setRandomColor, colorGenerator, randomC
     setRandomColor(colorGenerator())
   }
 
+  console.log(randomQuotes[1])
+
   return (
-    <div>
-      <p>This is where I get quoted!</p>
-      <button onClick={clickHandlerFunction} style={{backgroundColor: `${randomColor}`}}>Change colors!</button>
+    <div className="quote-box">
+      <q id="text" style = {{color: `${randomColor}`}}>{randomQuotes[1].quote}</q>
+      <p id="author" style = {{color: `${randomColor}`}}>{`-${randomQuotes[1].author}`}</p>
+      <button id = "new-quote" onClick={clickHandlerFunction} style={{backgroundColor: `${randomColor}`}}>Next Quote</button>
     </div>
   )
 }

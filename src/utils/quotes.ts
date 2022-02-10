@@ -1,7 +1,7 @@
 export const randomQuotes = [
   {
     author: 'Babe Ruth',
-    quote: 'Every strike brings me closer to the next home rune.'
+    quote: 'Every strike brings me closer to the next home run.'
 
   },
 

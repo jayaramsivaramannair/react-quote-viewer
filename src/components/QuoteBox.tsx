@@ -5,31 +5,40 @@ import {FaTumblr} from 'react-icons/fa'
 
 interface quoteProps {
   setRandomColor: React.Dispatch<React.SetStateAction<string>>
+  setRandomNumber: React.Dispatch<React.SetStateAction<number>>
   colorGenerator() : string
+  randomNumberGeneration(length: number) : number
   randomColor: string
+  randomNumber: number
 }
 
 
-const QuoteBox: React.FC<quoteProps> = ({setRandomColor, colorGenerator, randomColor}) => {
+const QuoteBox: React.FC<quoteProps> = ({setRandomColor, 
+  colorGenerator,
+  setRandomNumber, 
+  randomColor, 
+  randomNumberGeneration, 
+  randomNumber}) => {
   const clickHandlerFunction = () => {
     setRandomColor(colorGenerator())
+    setRandomNumber(randomNumberGeneration(randomQuotes.length))
   }
-
-  console.log(randomQuotes[1])
+  
 
   return (
     <div className="quote-box">
-      <q id="text" style = {{color: `${randomColor}`}}>{randomQuotes[1].quote}</q>
-      <p id="author" style = {{color: `${randomColor}`}}>{`-${randomQuotes[1].author}`}</p>
-      <button id = "new-quote" onClick={clickHandlerFunction} style={{backgroundColor: `${randomColor}`}}>Next Quote</button>
-      <div className="social-container">
+      <q id="text" style = {{color: `${randomColor}`}}>{randomQuotes[randomNumber].quote}</q>
+      <p id="author" style = {{color: `${randomColor}`}}>{`-${randomQuotes[randomNumber].author}`}</p>
+      <div className="icons">
         <div className="twitter" style={{backgroundColor: `${randomColor}`}}>
-          <a id="tweet-quote" href={`../../public/twitter.svg`}><FaTwitter size={'3em'} color={'black'}/></a>
+          <a id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" rel="noreferrer"><FaTwitter size={'3em'} color={'black'}/></a>
         </div>
         <div className="tumblr" style={{backgroundColor: `${randomColor}`}}>
           <a id="tumblr-icon" href={`../../public/twitter.svg`}><FaTumblr size={'3em'} color={'black'}/></a>
         </div>
       </div>
+        <button id = "new-quote" onClick={clickHandlerFunction} style={{backgroundColor: `${randomColor}`}}>Next Quote</button>
+      
     </div>
   )
 }

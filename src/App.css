@@ -2,11 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'Spirax', cursive;
-}
-
-body {
-  color: black;
+  font-family: 'Work Sans';
 }
 
 .App {
@@ -39,23 +35,23 @@ button:hover {
   cursor: pointer;
 }
 
-.quote-box {
+#quote-box {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  background-color: black;
+  background-color: white;
   flex-direction: column;
   width: 750px;
   height: 600px;
 }
 
-.quote-box q {
+#quote-box q {
   font-size: 40px;
 }
 
-.quote-box p {
+#quote-box p {
   font-size: 35px;
   text-align: right;
 }
@@ -63,7 +59,6 @@ button:hover {
 .icons {
   display: flex;
   flex-direction: row;
-  border: 2px solid red;
 }
 
 .twitter,

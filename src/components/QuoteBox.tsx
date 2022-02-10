@@ -26,7 +26,7 @@ const QuoteBox: React.FC<quoteProps> = ({setRandomColor,
   
 
   return (
-    <div className="quote-box">
+    <div id="quote-box">
       <q id="text" style = {{color: `${randomColor}`}}>{randomQuotes[randomNumber].quote}</q>
       <p id="author" style = {{color: `${randomColor}`}}>{`-${randomQuotes[randomNumber].author}`}</p>
       <div className="icons">
@@ -34,7 +34,7 @@ const QuoteBox: React.FC<quoteProps> = ({setRandomColor,
           <a id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" rel="noreferrer"><FaTwitter size={'3em'} color={'black'}/></a>
         </div>
         <div className="tumblr" style={{backgroundColor: `${randomColor}`}}>
-          <a id="tumblr-icon" href={`../../public/twitter.svg`}><FaTumblr size={'3em'} color={'black'}/></a>
+          <a id="tumblr-icon" href="https://twitter.com/intent/tweet"><FaTumblr size={'3em'} color={'black'}/></a>
         </div>
       </div>
         <button id = "new-quote" onClick={clickHandlerFunction} style={{backgroundColor: `${randomColor}`}}>Next Quote</button>
